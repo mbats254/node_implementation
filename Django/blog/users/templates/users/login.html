@@ -1,0 +1,19 @@
+<html>
+
+{% extends "flights/base.html" %} {% block title %} Login Page {% endblock %} {% block body %}
+<h1>Login Here</h1>
+{% if message %}
+<div>
+    {{ message }}
+</div>
+{% endif %}
+<form action="{% url 'login' %}" method="POST">
+    {% csrf_token %}
+    <label>Username</label>
+    <input type="text" name="username">
+    <input type="password" name="password">
+    <input type="submit" value="Submit">
+</form>
+
+<!-- <a href="{% url 'index' %}">Back to Index</a> -->
+{% endblock %}
