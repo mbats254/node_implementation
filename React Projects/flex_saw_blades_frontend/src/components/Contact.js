@@ -5,12 +5,12 @@ class Contact extends Component {
     
     sendMessage = (event, requestType, contactUniqid) => {
         event.preventDefault();
-        const name = event.target.name.value;
-        const email = event.target.email.value;
+		const name = event.target.name.value;
+		const email = event.target.email.value;
         const message = event.target.message.value;
                 
         switch (requestType) {
-            case 'post':    
+			case 'post': 			   
            return  axios.post('http://127.0.0.1:8000/post/contact/',{
                     name:name,
                     email:email,
